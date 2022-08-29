@@ -15,16 +15,19 @@
  */
 package org.traccar.client
 
-import androidx.multidex.MultiDexApplication
 import android.annotation.TargetApi
+import android.app.Activity
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.Notification
 import android.graphics.Color
 import android.os.Build
-import android.app.Activity
+import androidx.multidex.MultiDexApplication
+import org.traccar.client.login.UserPreferences
 
 open class MainApplication : MultiDexApplication() {
+
+    val dataStore by lazy { UserPreferences(this) }
 
     override fun onCreate() {
         super.onCreate()
@@ -41,7 +44,9 @@ open class MainApplication : MultiDexApplication() {
         )
         channel.lightColor = Color.GREEN
         channel.lockscreenVisibility = Notification.VISIBILITY_SECRET
-        (getSystemService(NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(channel)
+        (getSystemService(NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(
+            channel
+        )
     }
 
     open fun handleRatingFlow(activity: Activity) {}
