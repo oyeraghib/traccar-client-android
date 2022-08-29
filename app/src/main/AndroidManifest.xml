@@ -48,7 +48,8 @@
 
     <activity
         android:name=".login.LoginActivity"
-        android:exported="true" />
+        android:exported="true"
+        android:noHistory="true"/>
 
     <activity-alias
         android:name=".Launcher"
