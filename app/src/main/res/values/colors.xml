@@ -6,4 +6,10 @@
     <color name="accent">#388E3C</color>
     <color name="light">#FFFFFF</color>
 
+    <!-- New Color Scheme -->
+    <color name="app_bar">#20C997</color>
+    <color name="status_bar">#313450</color>
+    <color name="color_accent">#13805F</color>
+
+
 </resources>
